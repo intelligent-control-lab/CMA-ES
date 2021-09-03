@@ -1,4 +1,4 @@
-exp_prefix: "insertion_finetune"
+exp_prefix: "test"
 epoch: 3
 elite_ratio: 0.1
 populate_num: 30
@@ -7,4 +7,4 @@ lower_bound: [-10]
 upper_bound: [10]
 init_sigma_ratio: 0.3 # initial sigma = init_sigma_ratio * (upper_bound - lower_bound)
 noise_ratio: 0.01 # noise = noise_ratio * (upper_bound - lower_bound)
-evaluator: "test_evaluator"
+evaluator: "TestEvaluator"

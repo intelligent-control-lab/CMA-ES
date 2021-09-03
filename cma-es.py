@@ -33,7 +33,7 @@ class SafeLearning(object):
             for i in range(params.shape[1]):
                 if self.cmaes_args["param_is_int"][i]:
                     params[:,[i]] = np.vstack([int(round(x)) for x in params[:,i]])
-            # params = [ if self.cmaes_args["param_is_int"][i] else params[i] ]
+            # params = [ int(params[i]) if self.cmaes_args["param_is_int"][i] else params[i] ]
         return params
 
     def populate(self, mu, sigma):
@@ -103,6 +103,7 @@ class SafeLearning(object):
         print(mu)
         print("Final reward:")
         print(self.evaluate(mu, log=False))
+        self.evaluator.visualize(mu)
         return mu
 
 def main(config_path):
